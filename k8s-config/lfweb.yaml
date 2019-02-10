@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lfweb
+  labels:
+    app: lfweb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: lfweb
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lfweb
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lfweb
+  template:
+    metadata:
+      labels:
+        app: lfweb
+    spec:
+      containers:
+      - name: lfweb
+        image: epilanthanomai/lfweb:0.0.6
+        ports:
+        - containerPort: 80
