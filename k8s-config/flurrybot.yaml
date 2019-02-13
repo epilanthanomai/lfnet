@@ -14,7 +14,7 @@ spec:
           containers:
           - name: flurrybot
             image: epilanthanomai/flurrybot:0.1
-            command: ["/bin/sh", "./generate.sh"]
+            command: ["/bin/sh", "-c", "cd $ROOT/src && ./generate.sh"]
             env:
             - name: MASTO_TOKEN
               valueFrom:
