@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redclay
+  labels:
+    app: redclay
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 6666
+    protocol: TCP
+  selector:
+    app: redclay
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redclay
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redclay
+  template:
+    metadata:
+      labels:
+        app: redclay
+    spec:
+      containers:
+      - name: redclay
+        image: epilanthanomai/redclay:0.0.1
+        ports:
+        - containerPort: 6666
