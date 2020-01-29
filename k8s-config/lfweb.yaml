@@ -28,6 +28,6 @@ spec:
     spec:
       containers:
       - name: lfweb
-        image: epilanthanomai/lfweb:0.0.7
+        image: epilanthanomai/lfweb:0.0.8
         ports:
         - containerPort: 80
