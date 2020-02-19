@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redclay
+spec:
+  type: ClusterIP
