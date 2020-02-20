@@ -31,3 +31,7 @@ spec:
         image: epilanthanomai/redclay:0.0.1
         ports:
         - containerPort: 6666
+        resources:
+          limits:
+            cpu: "50m"
+            memory: "20M"

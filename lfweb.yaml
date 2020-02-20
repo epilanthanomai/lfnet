@@ -31,3 +31,7 @@ spec:
         image: epilanthanomai/lfweb:0.0.8
         ports:
         - containerPort: 80
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "20M"
