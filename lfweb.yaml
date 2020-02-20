@@ -35,3 +35,13 @@ spec:
           limits:
             cpu: "100m"
             memory: "20M"
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: lfweb
+                topologyKey: kubernetes.io/hostname
+              weight: 50
+
