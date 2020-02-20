@@ -15,6 +15,10 @@ spec:
           - name: flurrybot
             image: epilanthanomai/flurrybot:0.1
             command: ["/bin/sh", "-c", "cd $ROOT/src && ./generate.sh"]
+            resources:
+              limits:
+                cpu: "100m"
+                memory: "20M"
             env:
             - name: MASTO_TOKEN
               valueFrom:
