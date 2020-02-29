@@ -3,11 +3,9 @@ kind: Kustomization
 namespace: lfnet-staging
 
 resources:
-  - flurrybot.yaml
   - lfweb.yaml
   - redclay.yaml
 
 patchesStrategicMerge:
-  - flurrybot_suspend.yaml
   - lfweb_private_service_endpoint.yaml
   - redclay_private_service_endpoint.yaml
