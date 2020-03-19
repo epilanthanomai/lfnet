@@ -5,6 +5,7 @@ namespace: lfnet-staging
 resources:
   - lfweb.yaml
   - redclay.yaml
+  - shufflebot.yaml
 
 patchesStrategicMerge:
   - lfweb_private_service_endpoint.yaml

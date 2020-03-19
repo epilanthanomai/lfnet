@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shufflebot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shufflebot
+  template:
+    metadata:
+      labels:
+        app: shufflebot
+    spec:
+      containers:
+      - name: shufflebot
+        image: epilanthanomai/shufflebot:0.0.1
+        env:
+        - name: DISCORD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: shufflebot-creds
+              key: discord-token
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "64M"
