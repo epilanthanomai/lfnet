@@ -6,5 +6,6 @@ resources:
   - flurrybot.yaml
   - lfweb.yaml
   - redclay.yaml
+  - shufflebot.yaml
 
 patchesStrategicMerge:
