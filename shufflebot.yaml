@@ -14,13 +14,18 @@ spec:
     spec:
       containers:
       - name: shufflebot
-        image: epilanthanomai/shufflebot:0.0.2
+        image: epilanthanomai/shufflebot:0.0.3
         env:
         - name: DISCORD_TOKEN
           valueFrom:
             secretKeyRef:
-              name: shufflebot-creds
+              name: shufflebot-config
               key: discord-token
+        - name: SHUFFLEBOT_DECKLIST
+          valueFrom:
+            secretKeyRef:
+              name: shufflebot-config
+              key: decklist
         resources:
           limits:
             cpu: "100m"
